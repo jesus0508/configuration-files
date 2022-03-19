@@ -1,6 +1,8 @@
 server:
   port: ${SERVER_PORT}
 eureka:
+  instance:
+    hostname: ${EUREKA_HOSTNAME}
   client:
     register-with-eureka: false 
     fetchRegistry: false 
