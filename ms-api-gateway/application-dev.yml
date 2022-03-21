@@ -1,0 +1,39 @@
+#===========================================================================
+# CONFIGURACION CONTEXTO
+#===========================================================================
+server:
+  port: ${SERVER_PORT:8081}
+
+#===========================================================================
+# EUREKA
+#===========================================================================
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
+
+#===========================================================================
+# LOGGING
+#===========================================================================
+log:
+  path:${LOG_PATH}
+  
+#===========================================================================
+# GATEWAY
+#===========================================================================
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: ms-customers
+        uri: lb://MS-CUSTOMERS
+        predicates:
+          - Path=/customers/**
+      - id: ms-bank-accounts
+        uri: lb://MS-BANK-ACCOUNTS
+        predicates:
+          - Path=/bank-accounts/**
+      - id: ms-bank-accounts
+        uri: lb://MS-CREDITS
+        predicates:
+          - Path=/credits/**          
