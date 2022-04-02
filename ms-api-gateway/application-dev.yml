@@ -36,4 +36,8 @@ spring:
       - id: ms-bank-accounts
         uri: lb://MS-CREDITS
         predicates:
-          - Path=/credits/**          
+          - Path=/credits/**
+      - id: ms-customers-products-overview
+        uri: lb://MS-CUSTOMERS-PRODUCTS-OVERVIEW
+        predicates:
+          - Path=/customers-products-overview/**           
