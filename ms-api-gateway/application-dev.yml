@@ -26,18 +26,18 @@ spring:
     gateway:
       routes:
       - id: ms-customers
-        uri: lb://MS-CUSTOMERS
+        uri: lb://mscustomers
         predicates:
           - Path=/customers/**
       - id: ms-bank-accounts
-        uri: lb://MS-BANK-ACCOUNTS
+        uri: lb://msbankaccount
         predicates:
           - Path=/bank-accounts/**
-      - id: ms-bank-accounts
-        uri: lb://MS-CREDITS
+      - id: ms-credits
+        uri: lb://mscredits
         predicates:
           - Path=/credits/**
       - id: ms-customers-products-overview
-        uri: lb://MS-CUSTOMERS-PRODUCTS-OVERVIEW
+        uri: lb://mscustomersproductsoverview
         predicates:
           - Path=/customers-products-overview/**           
