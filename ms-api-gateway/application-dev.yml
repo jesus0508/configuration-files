@@ -26,18 +26,30 @@ spring:
     gateway:
       routes:
       - id: ms-customers
-        uri: lb://mscustomers
+        uri: lb://MS-CUSTOMERS
         predicates:
           - Path=/customers/**
       - id: ms-bank-accounts
-        uri: lb://msbankaccount
+        uri: lb://MS-BANK-ACCOUNTS
         predicates:
           - Path=/bank-accounts/**
       - id: ms-credits
-        uri: lb://mscredits
+        uri: lb://MS-CREDITS
         predicates:
           - Path=/credits/**
       - id: ms-customers-products-overview
-        uri: lb://mscustomersproductsoverview
+        uri: lb://MS-CUSTOMERS-PRODUCTS-OVERVIEW
         predicates:
-          - Path=/customers-products-overview/**           
+          - Path=/customers-products-overview/**
+      - id: ms-wallet-holder
+        uri: lb://MS-WALLET-HOLDER
+        predicates:
+          - Path=/wallet-holders/**       
+      - id: ms-wallet-transactions
+        uri: lb://MS-WALLET-TRANSACTIONS
+        predicates:
+          - Path=/wallet-transactions/**           
+      - id: ms-wallet-yanki
+        uri: lb://MS-WALLET-YANKI
+        predicates:
+          - Path=/wallet-yanki/**               
