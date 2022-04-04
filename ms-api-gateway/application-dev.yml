@@ -33,6 +33,10 @@ spring:
         uri: lb://MS-BANK-ACCOUNTS
         predicates:
           - Path=/bank-accounts/**
+      - id: ms-bank-account-balance-management
+        uri: lb://MS-BANK-ACCOUNT-BALANCE-MANAGEMENT
+        predicates:
+          - Path=/bank-account-balance/**
       - id: ms-credits
         uri: lb://MS-CREDITS
         predicates:
